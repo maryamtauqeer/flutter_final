@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_final/firebase_options.dart';
 import 'package:flutter_final/networking/dashboard.dart';
-import 'package:flutter_final/networking/login.dart';
-import 'package:flutter_final/networking/signup.dart';
+import 'package:flutter_final/networking/ui_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -28,11 +27,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.deepPurple),
       ),
-      initialRoute: '/signup',
+      initialRoute: '/dashboard',
       routes: {
-        '/login': (context) => LoginScreen(),
         '/dashboard': (context) => DashboardScreen(),
-        '/signup': (context) => SignUpScreen(),
+        '/ui': (context) => UIScreen(),
       },
     );
   }

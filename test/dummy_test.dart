@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_final/main.dart';
+import 'package:flutter_final/networking/ui_screen.dart';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:golden_toolkit/golden_toolkit.dart';
@@ -15,8 +16,8 @@ void main() {
         Device.tabletLandscape,
       ])
       ..addScenario(
-        widget: MyApp(),
-        name: 'sc page',
+        widget: UIScreen(),
+        name: 'ui screen',
       );
     await tester.pumpDeviceBuilder(builder,
         wrapper: materialAppWrapper(
@@ -24,6 +25,6 @@ void main() {
           platform: TargetPlatform.android,
         ));
 
-    await screenMatchesGolden(tester, "first_screen_shot");
+    await screenMatchesGolden(tester, "'ui_sc.dart");
   });
 }
